@@ -11,4 +11,18 @@
         <maven.compiler.target>21</maven.compiler.target>
         <exec.mainClass>de.linguistibits.workflow_tgdp.Workflow_TGDP</exec.mainClass>
     </properties>
+    
+   <dependencies>
+
+        <!-- ZuMult application logic including MTAS, Lucene, EXMARaLDA etc. -->
+        <dependency>
+            <groupId>org.zumult</groupId>
+            <artifactId>zumultapi</artifactId>
+            <version>0.1.13</version>
+        </dependency>             
+
+        
+    </dependencies>    
+    
+    
 </project>
