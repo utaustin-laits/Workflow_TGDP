@@ -138,11 +138,12 @@ public class IndexForMTAS {
         System.out.println("------------------------------------------------------------");
         System.out.println("------------------------------------------------------------");
         
-        /*System.out.println("[IndexForMTAS] DELETING TEMPORARY DIRECTORY AT " + tempDir.toString());
+        System.out.println("[IndexForMTAS] DELETING TEMPORARY DIRECTORY AT " + tempDir.toString());
         for (File f : tempDir.toFile().listFiles()){
             f.delete();
         }        
-        Files.delete(tempDir);*/
+        Files.delete(tempDir);
+        
         System.out.println("[IndexForMTAS] TEMPORARY DIRECTORY DELETED");
         
         System.out.println("[IndexForMTAS] DONE!");
