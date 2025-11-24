@@ -46,7 +46,7 @@ public class StatsForCOMA {
         }
     }
     
-    static String pathToComa = "D:\\ZUMULT\\TGDP\\TGDP.coma";
+    static String pathToComa = "D:\\ZUMULT-UT\\TGDP\\TGDP.coma";
     
 
     private void doit() throws IOException, SAXException, ParserConfigurationException, XPathExpressionException, TransformerException, JDOMException {
@@ -55,19 +55,34 @@ public class StatsForCOMA {
         org.jdom.Document outDocument = new org.jdom.Document(new org.jdom.Element("corpus-statistics").setAttribute("id", corpusID));
         
         
+        
+        
         TokenList allTokenList = new DefaultTokenList("transcription");
         
         org.jdom.Document comaDocument = org.exmaralda.exakt.utilities.FileIO.readDocumentFromLocalFile(comaFile);
         Path topLevelPath = comaFile.getParentFile().toPath();
         List communications = org.jdom.xpath.XPath.selectNodes(comaDocument, "//Communication");
+        List speakers = org.jdom.xpath.XPath.selectNodes(comaDocument, "//Speaker");
+        List allTranscriptions = org.jdom.xpath.XPath.selectNodes(comaDocument, "//Transcription");
         System.out.println("[StatsForComa] " + communications.size() + " speech events found in " + comaFile.getAbsolutePath());
+
+
+        int countInterviews = communications.size();
+        int countSpeakers = speakers.size();
+        int countTranscripts = allTranscriptions.size();
+        outDocument.getRootElement().setAttribute("speakers", Integer.toString(countSpeakers));
+        outDocument.getRootElement().setAttribute("interviews", Integer.toString(countInterviews));
+        outDocument.getRootElement().setAttribute("transcripts", Integer.toString(countTranscripts));
+
+
+
         int count = 0;
         
         int i=0;
         for (Object o2 : communications){
             org.jdom.Element communication = (org.jdom.Element)o2;
             TokenList seTokenList = new DefaultTokenList("transcription");
-            org.jdom.Element seElement = new org.jdom.Element("speech-event");
+            org.jdom.Element seElement = new org.jdom.Element("interview");
             String speechEventID = communication.getAttributeValue("Id");
             seElement.setAttribute("id", speechEventID);
             outDocument.getRootElement().addContent(seElement);
