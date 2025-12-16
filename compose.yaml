@@ -1,0 +1,13 @@
+services:
+  web:
+    build: .
+    volumes:
+      - corpus:/corpusdata
+      - lucene:/lucene-indices
+    command: /usr/bin/bash
+    tty: true
+    stdin_open: true
+
+volumes:
+  corpus:
+  lucene:

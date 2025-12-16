@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+  <backend classPath="org.zumult.backend.implementations.COMAFileSystem">              
+    <!-- Top level folder for the Lucene indices, see section 3 -->
+    <search-index-path>/lucene-indices/</search-index-path>
+
+    <!-- for the TreeTagger, see section 1.8 -->
+    <tree-tagger-directory>/build/treetagger</tree-tagger-directory>
+    <tree-tagger-parameter-file-german>/build/src/main/java/de/linguisticbits/workflow/tagger/2021-04-16_ParameterFile_ORIGINAL_ALL_FINAL.par</tree-tagger-parameter-file-german>
+    <tree-tagger-parameter-file-english>/build/src/main/java/de/linguisticbits/workflow/tagger/english.par</tree-tagger-parameter-file-english>
+
+    <!-- Phonetic lexicons, see section 1.9 -->
+    <phonetic-lexicon-german>/build/src/main/java/de/linguisticbits/workflow/normalizer/Lexicon_German.xml</phonetic-lexicon-german>
+    <phonetic-lexicon-english>/build/src/main/java/de/linguisticbits/workflow/normalizer/Lexicon_English.xml</phonetic-lexicon-english>
+    <phonetic-lexicon-other>/build/src/main/java/de/linguisticbits/workflow/normalizer/Lexicon_Other.xml</phonetic-lexicon-other>
+  </backend>
+  
+
+
+</configuration>
