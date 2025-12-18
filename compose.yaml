@@ -1,12 +1,19 @@
 services:
   web:
-    build: .
+    build:
+      context: .
+      args:
+        - GITHUB_TOKEN=${GITHUB_TOKEN}
+        - GITHUB_USER=${GITHUB_USER}
     volumes:
       - corpus:/corpusdata
       - lucene:/lucene-indices
     command: /usr/bin/bash
     tty: true
     stdin_open: true
+    environment:
+      - S3_ACCESS_KEY=${S3_ACCESS_KEY}
+      - S3_SECRET_KEY=${S3_SECRET_KEY}
 
 volumes:
   corpus:

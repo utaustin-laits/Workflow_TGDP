@@ -14,22 +14,17 @@ RUN curl https://dl.min.io/client/mc/release/linux-amd64/mc \
   -o /usr/local/bin/mc && \
   chmod +x /usr/local/bin/mc
 
-ENV ZUMULT_CONFIG_PATH /config/workflow_configuration.xml
+ENV ZUMULT_CONFIG_PATH /build/config/workflow_configuration.xml
 
 COPY local-deps /build/local-deps
-RUN mvn install:install-file \
-   -Dfile=/build/local-deps/zumult-api.jar \
-   -DgroupId=org.zumult \
-   -DartifactId=zumultapi \
-   -Dversion=0.1.14 \
-   -Dpackaging=jar \
-   -DgeneratePom=true
 
 COPY src /build/src
 COPY config /build/config
 COPY pom.xml /build
-# RUN cd /build && mvn package
-
 COPY scripts /build/scripts
 COPY work /work
+
+ARG GITHUB_USER
+ARG GITHUB_TOKEN
+RUN cd /build && mvn --settings /build/config/maven_settings.xml package
 

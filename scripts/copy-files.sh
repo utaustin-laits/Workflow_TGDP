@@ -1,6 +1,6 @@
-#!/usr/bin/bash -e
+#!/usr/bin/bash
 
-mc alias set local https://minio.la.utexas.edu "$LOCAL_S3_ACCESS_KEY" "$LOCAL_S3_SECRET_KEY"
+mc alias set local https://minio.la.utexas.edu "$S3_ACCESS_KEY" "$S3_SECRET_KEY"
 
 while IFS= read -r interviewsectionid; do
     # Split on '-' and capture first three fields
@@ -13,7 +13,6 @@ while IFS= read -r interviewsectionid; do
 
     echo "copying $interviewsectionid"
     mc cp --recursive local/speech-islands/interviews/$prefix/$interviewsectionid.eaf /work/TGDP/$prefix
+    mc cp --recursive local/speech-islands/sound_files/$prefix/$interviewsectionid.mp3 /work/TGDP/$prefix
+    mc cp --recursive local/speech-islands/sound_files/$prefix/$interviewsectionid.wav /work/TGDP/$prefix
 done < "public-sections.txt"
-
-# mc cp --recursive local/speech-islands/sound_files/$interviewsectionid /corpusdata/TGDP/
-# mc cp --recursive local/speech-islands/interviews/$interviewsectionid /corpusdata/TGDP/

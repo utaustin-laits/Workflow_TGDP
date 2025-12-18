@@ -12,11 +12,11 @@ SCRIPT_DIR=$(cd "$(dirname "$0")" && pwd)
 cd "$SCRIPT_DIR"
 
 # The JAR compiled as target for Workflow_TGDP
-WORKFLOW_JAR="/path/to/Workflow_TGDP/Workflow_TGDP/target/Workflow_TGDP-1.0-SNAPSHOT.jar"
+WORKFLOW_JAR="/build/target/Workflow_TGDP-1.0-SNAPSHOT.jar"
 
 # The directory containing all dependencies as JARs
 # Adjust the path and wildcard as appropriate
-LIB_DIRECTORY="/path/to/WORKFLOW_DEPENDENCIES/*"
+LIB_DIRECTORY="/build/libs/*"
 
 # Combined classpath (':' is the Unix classpath separator)
 CLASS_PATH="$WORKFLOW_JAR:$LIB_DIRECTORY"

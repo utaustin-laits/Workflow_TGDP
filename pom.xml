@@ -39,7 +39,7 @@
                     </goals>
                     <configuration>
                         <!-- The directory where you want all JARs copied -->
-                        <outputDirectory>C:\Users\bernd\Dropbox\work\2021_MARGO_TEXAS_GERMAN\WORKFLOW_DEPENDENCIES</outputDirectory>
+                        <outputDirectory>/build/libs</outputDirectory>
                     </configuration>
                 </execution>
             </executions>
