@@ -4,6 +4,8 @@
     <!-- Top level folder for the Lucene indices, see section 3 -->
     <search-index-path>/lucene-indices/</search-index-path>
 
+    <ffmpeg-path>/usr/bin/ffmpeg</ffmpeg-path>
+
     <!-- for the TreeTagger, see section 1.8 -->
     <tree-tagger-directory>/build/treetagger</tree-tagger-directory>
     <tree-tagger-parameter-file-german>/build/src/main/java/de/linguisticbits/workflow/tagger/2021-04-16_ParameterFile_ORIGINAL_ALL_FINAL.par</tree-tagger-parameter-file-german>
