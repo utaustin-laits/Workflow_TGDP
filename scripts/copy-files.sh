@@ -12,7 +12,7 @@ while IFS= read -r interviewsectionid; do
     fi
 
     echo "copying $interviewsectionid"
-    mc cp --recursive local/speech-islands/interviews/$prefix/$interviewsectionid.eaf /work/TGDP/$prefix
-    mc cp --recursive local/speech-islands/sound_files/$prefix/$interviewsectionid.mp3 /work/TGDP/$prefix
-    mc cp --recursive local/speech-islands/sound_files/$prefix/$interviewsectionid.wav /work/TGDP/$prefix
+    mc cp --recursive local/speech-islands/interviews/$prefix/$interviewsectionid.eaf /corpusdata/TGDP/$prefix
+    mc cp --recursive local/speech-islands/sound_files/$prefix/$interviewsectionid.mp3 /corpusdata/TGDP/$prefix
+    mc cp --recursive local/speech-islands/sound_files/$prefix/$interviewsectionid.wav /corpusdata/TGDP/$prefix
 done < "public-sections.txt"
