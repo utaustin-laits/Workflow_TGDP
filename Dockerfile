@@ -3,7 +3,7 @@ FROM maven:3-eclipse-temurin-21 AS mavenbuild
 VOLUME /corpusdata
 VOLUME /lucene-indices
 
-RUN apt update && apt install -y nano ffmpeg && rm -rf /var/lib/apt/lists/*
+RUN apt update && apt install -y nano && rm -rf /var/lib/apt/lists/*
 
 COPY local-deps/treetagger/* /build/treetagger/
 RUN chmod +x /build/treetagger/install.sh

@@ -4,7 +4,8 @@
     <!-- Top level folder for the Lucene indices, see section 3 -->
     <search-index-path>/lucene-indices/</search-index-path>
 
-    <ffmpeg-path>/usr/bin/ffmpeg</ffmpeg-path>
+    <ffmpeg-path>/not-available</ffmpeg-path>
+    <corpus-ids-for-indexing>TGDP</corpus-ids-for-indexing>
 
     <!-- for the TreeTagger, see section 1.8 -->
     <tree-tagger-directory>/build/treetagger</tree-tagger-directory>
